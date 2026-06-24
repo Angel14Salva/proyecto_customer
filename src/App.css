@@ -1,0 +1,125 @@
+/* ── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --verde:   #8FA832;
+  --naranja: #E87722;
+  --azul:    #1B2A4A;
+  --azul-mid:#2E4A7A;
+  --bg:      #F7F8F4;
+  --card:    #FFFFFF;
+  --border:  #E2E8D8;
+  --text:    #1A1A1A;
+  --muted:   #6B7280;
+  --font:    'Inter', 'Segoe UI', system-ui, sans-serif;
+  --mono:    'JetBrains Mono', 'Fira Code', monospace;
+}
+
+body { font-family: var(--font); background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+/* ── Header ──────────────────────────────────────── */
+.header { background: var(--azul); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--verde); }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+
+.brand { font-size: 20px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
+.brand-k { color: var(--verde); font-size: 26px; }
+.brand-tag { font-size: 11px; font-weight: 400; color: #7A9CC0; letter-spacing: 1px; text-transform: uppercase; }
+
+.nav { display: flex; gap: 4px; }
+.nav-btn { background: transparent; border: none; color: #A0B4C8; font-size: 13px; font-weight: 500; cursor: pointer; padding: 6px 14px; border-radius: 6px; transition: all .2s; }
+.nav-btn:hover { color: #fff; background: rgba(255,255,255,.08); }
+.nav-btn.activo { color: #fff; background: var(--verde); }
+
+/* ── Main ────────────────────────────────────────── */
+.main { max-width: 1200px; margin: 0 auto; padding: 32px 24px 60px; display: flex; flex-direction: column; gap: 32px; }
+
+/* ── Hero ────────────────────────────────────────── */
+.hero { background: var(--azul); border-radius: 16px; padding: 48px 40px; color: #fff; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; top: -40px; right: -40px; width: 280px; height: 280px; background: var(--verde); opacity: .08; border-radius: 50%; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--verde); margin-bottom: 12px; font-weight: 600; }
+.hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 900; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+.hero-accent { color: var(--naranja); }
+.hero-sub { font-size: 16px; color: #A0B4C8; max-width: 480px; line-height: 1.6; }
+
+/* ── Secciones ───────────────────────────────────── */
+.seccion { background: var(--card); border-radius: 12px; padding: 28px 28px 24px; border: 1px solid var(--border); }
+.seccion-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.seccion-header h2 { font-size: 18px; font-weight: 700; color: var(--azul); }
+.seccion-desc { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+.tag { background: var(--verde); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; }
+
+/* ── Momento Aha flow ────────────────────────────── */
+.aha-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.aha-step { display: flex; align-items: center; gap: 6px; }
+.aha-box { border-radius: 8px; padding: 10px 14px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.aha-box.neutral { background: #F0F4FF; color: var(--azul-mid); border: 1px solid #C8D4F0; }
+.aha-box.aha { background: #FFF3DC; color: var(--naranja); border: 2px solid var(--naranja); font-size: 13px; text-align: center; line-height: 1.3; }
+.aha-box.aha span { font-size: 16px; }
+.aha-sub { font-size: 10px; font-weight: 800; letter-spacing: 1px; color: var(--naranja); margin-top: 2px; }
+.aha-box.retencion { background: var(--azul); color: #fff; font-size: 12px; }
+.aha-arrow { color: #B0B8CC; font-size: 18px; font-weight: 300; }
+.aha-desc { font-size: 13px; color: var(--muted); background: #F7F8F4; border-left: 3px solid var(--verde); padding: 10px 14px; border-radius: 0 6px 6px 0; }
+
+/* ── KPI grid ────────────────────────────────────── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.kpi-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px 18px; }
+.kpi-valor { font-size: 36px; font-weight: 900; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
+.kpi-label { font-size: 13px; font-weight: 600; color: var(--azul); margin-bottom: 2px; }
+.kpi-sub { font-size: 11px; color: var(--muted); }
+
+/* ── Filtros ─────────────────────────────────────── */
+.filtros { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.filtro-btn { background: #F0F4FF; border: 1px solid #D0D8F0; color: var(--azul-mid); font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 20px; cursor: pointer; transition: all .15s; }
+.filtro-btn:hover { background: #E0E8FF; }
+.filtro-btn.activo { background: var(--azul); color: #fff; border-color: var(--azul); }
+
+/* ── Tabla ───────────────────────────────────────── */
+.tabla-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+.tabla { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tabla thead tr { background: var(--azul); }
+.tabla th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; color: #fff; letter-spacing: .5px; text-transform: uppercase; white-space: nowrap; }
+.tabla td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.tabla tbody tr:last-child td { border-bottom: none; }
+.tabla tbody tr:hover { background: #F7F9F4; }
+.tabla tbody tr.row-aha { background: #FFF8EC; }
+.tabla tbody tr.row-fraud { background: #FFF0F0; }
+.mono { font-family: var(--mono); font-size: 12px; }
+.ts { color: var(--muted); white-space: nowrap; }
+.center { text-align: center; }
+
+.badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 12px; white-space: nowrap; }
+.cohorte-tag { display: inline-block; background: var(--azul); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-family: var(--mono); }
+
+/* ── Tabla cohortes ──────────────────────────────── */
+.cohorte-tabla .th-sub { font-size: 10px; opacity: .7; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.cohorte-id-cell { min-width: 200px; }
+.cid { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--azul); }
+.cdesc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.celda { text-align: center; min-width: 110px; }
+.celda.disponible { background: #EAF2C2; }
+.celda.diagonal { background: #FFF3DC; border: 2px solid var(--naranja); }
+.celda.futuro { background: #F0F0F0; color: #AAAAAA; }
+.diag-pct { font-size: 20px; font-weight: 800; color: var(--azul); }
+.celda.diagonal .diag-pct { color: var(--naranja); }
+.diag-n { font-size: 11px; color: var(--muted); }
+
+.legend-diag { color: var(--naranja); font-weight: 600; margin-left: 12px; }
+.legend-fut { color: #888; margin-left: 12px; }
+
+/* ── Curva ───────────────────────────────────────── */
+.chart-wrap { background: #FAFAFA; border-radius: 8px; border: 1px solid var(--border); padding: 16px 8px 8px; margin-bottom: 16px; }
+.pmf-note { background: #EAF2C2; border: 1px solid var(--verde); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #3A5010; display: flex; align-items: center; gap: 10px; }
+.pmf-badge { background: var(--verde); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 12px; white-space: nowrap; }
+
+/* ── Footer ──────────────────────────────────────── */
+.footer { text-align: center; font-size: 11px; color: var(--muted); padding: 24px; border-top: 1px solid var(--border); margin-top: 20px; }
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 640px) {
+  .header-inner { flex-direction: column; height: auto; padding: 12px; gap: 8px; }
+  .nav { flex-wrap: wrap; justify-content: center; }
+  .hero { padding: 28px 20px; }
+  .seccion { padding: 20px 16px; }
+  .aha-flow { flex-direction: column; align-items: flex-start; }
+}
